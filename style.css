@@ -305,6 +305,7 @@ nav {
   .footer p {
     color: rgb(255, 255, 255);
     padding-left: 50px;
+    padding-right: 2px;
     font-size: 12px;
   }
 
