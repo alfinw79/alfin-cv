@@ -7,7 +7,7 @@
     <title>Alfin CV</title>
   </head>
   <body>
-    <nav class="nav-container">
+    <nav class="nav-container" id="nav-container">
       <a href="#" class="logo" style="font-weight: 900"
         >Alfin Curiculum Vitae</a
       >
@@ -198,13 +198,31 @@
     </div>
 
     <script>
-      const hamburger = document.getElementById("hamburger");
+     const hamburger = document.getElementById("hamburger");
       const navbar = document.getElementById("navbar");
 
-      hamburger.addEventListener("click", () => {
+      hamburger.addEventListener("click", function (e) {
         navbar.classList.toggle("active");
         hamburger.classList.toggle("active");
       });
+
+      document.addEventListener("click", function (e) {
+        if (!navbar.contains(e.target) && !hamburger.contains(e.target)) {
+          navbar.classList.remove("active");
+          hamburger.classList.remove("active");
+        }
+      });
+
+      var prevScrollpos = window.pageYOffset;
+      window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("nav-container").style.top = "0";
+        } else {
+          document.getElementById("nav-container").style.top = "-50px";
+        }
+        prevScrollpos = currentScrollPos;
+      };
     </script>
   </body>
 </html>
