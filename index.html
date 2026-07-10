@@ -16,10 +16,19 @@
         <li><a href="#">Beranda</a></li>
         <li><a href="#latar">Latar</a></li>
         <li><a href="#contact">Kontak</a></li>
-        <li>
-          <a href="https://alfinweb1.vercel.app/index.html" target="_blank"
-            >Project</a
-          >
+        <!-- Dropdown Item -->
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">
+            Project <span class="arrow">▼</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="https://alfinweb1.vercel.app" target="_blank"
+                >Website 1</a
+              >
+            </li>
+            <li><a href="#">Website 2</a></li>
+          </ul>
         </li>
         <li><a href="index-eng.html" style="font-size: 15px">En</a></li>
       </ul>
@@ -35,12 +44,7 @@
       <section id="#">
         <!--home-->
         <div class="home">
-          <img
-            src="img/myphoto.jpg"
-            width="100%"
-            height="400"
-            class="myphoto"
-          />
+          <img src="img/myphoto.jpg" class="myphoto" />
 
           <div class="home-right">
             <div class="about">
@@ -94,13 +98,13 @@
           <h1 style="text-decoration: underline">PENDIDIKAN</h1>
           <br />
           <div class="card-cont">
-            <div class="card">
+            <div class="card reveal">
               <p>
                 SMA St. Bonaventura Madiun. Jurusan : IPS (tahun 2008-2011).
               </p>
             </div>
             <br />
-            <div class="card">
+            <div class="card reveal">
               <p>
                 Sekolah Tinggi Teknik Dharma Iswara Madiun. Jurusan : S1 Teknik
                 Informatika (tahun 2011-2015).
@@ -112,14 +116,14 @@
           <h1 style="text-decoration: underline">PENGALAMAN KERJA</h1>
           <br />
           <div class="card-cont">
-            <div class="card">
+            <div class="card reveal">
               <p>
                 Account Officer di KBPR Arta Kencana Caruban (Desember
                 2016-Januari 2017).
               </p>
             </div>
             <br />
-            <div class="card">
+            <div class="card reveal">
               <p>
                 Staff Administrasi di PT. INKA Multi Solusi Madiun (Mei
                 2018-Juni 2026). Di INKA Multi Solusi pernah dibeberapa bagian,
@@ -139,23 +143,23 @@
           <h1 style="text-decoration: underline">KETERAMPILAN</h1>
           <br />
           <div class="card-cont">
-            <div class="card">
+            <div class="card reveal">
               <p>✦ &ensp;Ms. Office (Word, Excel, dan Power Point)</p>
             </div>
             <br />
-            <div class="card">
+            <div class="card reveal">
               <p>✦ &ensp;Editing Website</p>
             </div>
             <br />
-            <div class="card">
+            <div class="card reveal">
               <p>✦ &ensp;Photoshop</p>
             </div>
             <br />
-            <div class="card">
+            <div class="card reveal">
               <p>✦ &ensp;Troubleshooting Komputer</p>
             </div>
             <br />
-            <div class="card">
+            <div class="card reveal">
               <p>✦ &ensp;Video Editing</p>
             </div>
             <br />
@@ -163,8 +167,8 @@
         </div>
       </section>
 
-      <section class="contact" id="contact">
-        <h1>Kontak Saya :</h1>
+      <section class="contact reveal" id="contact">
+        <h1 style="text-decoration: underline">Kontak Saya :</h1>
         <br />
 
         <a href="https://instagram.com/all._.fine" target="_blank"
@@ -188,9 +192,7 @@
           <li><a href="#latar">Latar</a></li>
           <li><a href="#contact">Kontak</a></li>
           <li>
-            <a href="https://alfinweb1.vercel.app/index.html" target="_blank"
-              >Project</a
-            >
+            <a href="#">Project</a>
           </li>
         </ul>
         <p>&copy; 2026 | Curiculum Vitae by Alfin W. H.</p>
@@ -198,6 +200,7 @@
     </div>
 
     <script>
+      //HAMBURGER NAVBAR//
       const hamburger = document.getElementById("hamburger");
       const navbar = document.getElementById("navbar");
 
@@ -223,6 +226,48 @@
         }
         prevScrollpos = currentScrollPos;
       };
+
+      //DROPDOWN NAVBAR//
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleBtn = document.querySelector(".dropdown-toggle");
+        const dropdownMenu = document.querySelector(".dropdown-menu");
+
+        // Toggle dropdown on button click
+        toggleBtn.addEventListener("click", (e) => {
+          e.stopPropagation(); // Prevents document click event from firing immediately
+          const isExpanded = toggleBtn.getAttribute("aria-expanded") === "true";
+
+          // Toggle classes and accessibility attributes
+          dropdownMenu.classList.toggle("show");
+          toggleBtn.setAttribute("aria-expanded", !isExpanded);
+        });
+
+        // Close dropdown if user clicks anywhere else on the page
+        document.addEventListener("click", () => {
+          if (dropdownMenu.classList.contains("show")) {
+            dropdownMenu.classList.remove("show");
+            toggleBtn.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+
+      /*******transition******/
+      const reveals = document.querySelectorAll(".reveal");
+
+      function scrollReveal() {
+        for (let i = 0; i < reveals.length; i++) {
+          let windowHeight = window.innerHeight; // tinggi layar
+          let elementTop = reveals[i].getBoundingClientRect().top; // posisi elemen
+          let revealPoint = 150; // jarak dari bawah layar baru muncul
+
+          if (elementTop < windowHeight - revealPoint) {
+            reveals[i].classList.add("active"); // kasih class active
+          }
+        }
+      }
+
+      window.addEventListener("scroll", scrollReveal);
+      scrollReveal(); // jalanin sekali pas load
     </script>
   </body>
 </html>
