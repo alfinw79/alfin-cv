@@ -79,7 +79,7 @@ nav {
 .dropdown-menu {
   display: none; /* Hidden by default */
   position: absolute;
-  top: 35px;
+  top: 38px;
   left: 0;
   background-color: rgb(31, 31, 31);
   color: rgb(247, 247, 247);
@@ -280,7 +280,7 @@ nav {
 
   .navbar {
     position: absolute;
-    top: 47px;
+    top: 44px;
     left: 70%;
     width: 30%;
     background-color: rgb(3, 3, 3);
