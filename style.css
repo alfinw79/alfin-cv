@@ -24,6 +24,7 @@ nav {
   text-decoration: none;
   font-size: 30px;
   font-weight: 500;
+  transition: 0.5s ease-in-out;
 }
 
 .logo:hover {
@@ -52,11 +53,54 @@ nav {
   font-size: 20px;
   padding: 15px 20px;
   border-right: 2px solid rgba(0, 37, 97, 0.424);
+  transition: 0.5s ease-in-out;
 }
 
 .navbar li a:hover {
   color: rgb(169, 223, 68);
-  background-color: rgb(0, 37, 97);
+}
+
+/*******DROPDOWN*******/
+.dropdown {
+  position: relative;
+}
+.dropdown button {
+  padding: 0 0 0 20px;
+  font-size: 20px;
+  background: transparent;
+  color: white;
+  border: none;
+  transition: 0.5s ease-in-out;
+}
+.dropdown button:hover {
+  color: rgb(169, 223, 68);
+}
+
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background-color: rgb(31, 31, 31);
+  color: rgb(247, 247, 247);
+  list-style: none;
+  width: 140px;
+  padding: 0;
+  margin: 0;
+}
+.dropdown-menu li a {
+  color: rgb(255, 255, 255);
+  padding: 10px 15px;
+  display: block;
+  text-align: center;
+}
+.dropdown-menu li a:hover {
+  color: rgb(255, 23, 23);
+}
+
+/* JavaScript Toggle Class */
+.dropdown-menu.show {
+  display: block;
 }
 
 /*hamburger*/
@@ -75,7 +119,8 @@ nav {
 }
 
 .hamburger:hover {
-  background-color: rgb(0, 37, 97);
+  background-color: rgb(41, 41, 41);
+  border-radius: 30%;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -90,7 +135,7 @@ nav {
 
 /*content*/
 .content-container {
-  margin-top: 35px;
+  margin: 35px 40px 0 40px;
   color: black;
   font-size: 20px;
   font-weight: 600;
@@ -103,9 +148,8 @@ nav {
   padding: 30px;
 }
 .myphoto {
-  width: 30%;
-  height: 25%;
-  border-radius: 30%;
+  width: 35%;
+  border-radius: 20%;
   box-shadow: 1px 18px 18px 1px rgba(0, 0, 0, 0.522);
 }
 
@@ -146,7 +190,7 @@ nav {
 .cv {
   position: relative;
   color: rgb(0, 0, 0);
-  margin-top: 20px;
+  margin-top: 0;
   padding: 90px 50px 60px 50px;
   background-color: rgba(1, 53, 136, 0.052);
   border-radius: 0 200px 0 0;
@@ -170,6 +214,7 @@ nav {
 }
 
 .contact {
+  box-shadow: 6px 10px 10px 8px rgba(0, 0, 0, 0.385);
   padding: 15px;
   background-color: rgb(179, 248, 43);
   gap: 10px;
@@ -194,24 +239,28 @@ nav {
   text-decoration: none;
 }
 .contact a p3:hover {
-  color: rgb(0, 91, 166);
+  color: rgb(208, 142, 0);
   text-decoration: none;
 }
 
 .footer {
+  box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.346);
   display: flex;
   background-color: var(--primary-color);
   padding: 20px 50px 70px 50px;
   color: aliceblue;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 0;
 }
 .footer li a {
   text-decoration: none;
   color: aliceblue;
+  transition: 0.5s ease-in-out;
 }
 .footer p {
   font-size: 15px;
+  transition: 0.5s ease-in-out;
 }
 .footer li a:hover,
 .footer p:hover {
@@ -231,10 +280,10 @@ nav {
 
   .navbar {
     position: absolute;
-    top: 45px;
-    left: 50%;
-    width: 50%;
-    background-color: rgb(147, 253, 33);
+    top: 47px;
+    left: 70%;
+    width: 30%;
+    background-color: rgb(3, 3, 3);
     box-shadow: 0 0 0.5px 0.5px rgba(0, 0, 0, 0.553);
     flex-direction: column;
     align-items: center;
@@ -244,10 +293,15 @@ nav {
     transition: max-height 0.5s ease-in-out;
     padding: 0;
     margin: 0;
+    height: 550px;
   }
   .navbar li a {
-    color: black;
+    color: rgb(255, 255, 255);
   }
+  .navbar li a:hover {
+    color: rgb(179, 248, 43);
+  }
+
   .navbar.active {
     max-height: 280px;
   }
@@ -258,8 +312,31 @@ nav {
   }
   .navbar a {
     display: block;
-    padding: 12px 0;
   }
+
+  .dropdown button {
+    color: rgb(255, 255, 255);
+    margin: 15px 0;
+  }
+  .dropdown button:hover {
+    color: rgb(179, 248, 43);
+  }
+  .dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 40px;
+    background-color: rgb(31, 31, 31);
+    color: rgb(247, 247, 247);
+    border-radius: 20px 20px 0 0;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .dropdown-menu li a:hover {
+    color: rgb(255, 23, 23);
+  }
+
   .hamburger {
     display: flex;
   }
@@ -270,6 +347,7 @@ nav {
     flex-direction: column;
   }
   .content-container {
+    margin: 35px 0 0 0;
     font-size: 15px;
   }
 
@@ -306,12 +384,23 @@ nav {
 
   .footer p {
     color: rgb(255, 255, 255);
-    padding-left: 40px;
-    padding-right: 0;
-    font-size: 10px;
+    padding-left: 50px;
+    font-size: 12px;
   }
 
   .footer {
-    padding-right: 10px;
+    padding-left: 40px;
   }
+}
+
+/*******transition******/
+.reveal {
+  opacity: 0; /* Awalnya transparan */
+  transform: translateY(40px); /* Awalnya agak di bawah */
+  transition: all 1s ease; /* Animasi 1 detik */
+}
+
+.reveal.active {
+  opacity: 1; /* Jadi kelihatan */
+  transform: translateY(0); /* Balik ke posisi normal */
 }
