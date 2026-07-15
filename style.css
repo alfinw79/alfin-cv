@@ -82,6 +82,7 @@ nav {
 .dropdown-menu {
   display: none; /* Hidden by default */
   position: absolute;
+  border-radius: 0 0 0 20px;
   top: 38px;
   left: 0;
   background-color: rgb(31, 31, 31);
@@ -293,11 +294,10 @@ nav {
     align-items: center;
     gap: 0;
     max-height: 0;
-    overflow: hidden;
     transition: max-height 0.5s ease-in-out;
     padding: 0;
     margin: 0;
-    height: 242px;
+    height: 232px;
   }
   .navbar li a {
     color: rgb(255, 255, 255);
@@ -340,7 +340,7 @@ nav {
     top: 40px;
     background-color: rgb(31, 31, 31);
     color: rgb(247, 247, 247);
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px 20px 20px 20px;
     list-style: none;
     width: 100%;
     padding: 0;
@@ -397,12 +397,12 @@ nav {
 
   .footer p {
     color: rgb(255, 255, 255);
-    padding-left: 30px;
-    font-size: 10px;
+    padding-left: 50px;
+    font-size: 12px;
   }
 
   .footer {
-    padding: 20px 25px 70px 25px;
+    padding-left: 40px;
   }
 }
 
