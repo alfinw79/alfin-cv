@@ -298,7 +298,7 @@ nav {
     transition: max-height 0.5s ease-in-out;
     padding: 0;
     margin: 0;
-    height: 340px;
+    height: 310px;
   }
   .navbar li a {
     color: rgb(255, 255, 255);
@@ -313,7 +313,7 @@ nav {
   }
 
   .navbar.active {
-    max-height: 280px;
+    max-height: 500px;
   }
 
   .navbar li {
